@@ -107,15 +107,17 @@ Dựa qualitative + reward gap nhỏ, kỳ vọng nếu chạy IFEval/GSM8K/MMLU
 
 ## Bonus
 
+- [x] **NB5 GGUF deploy (+6):** merge FP16 (PEFT `merge_and_unload`, bypass Unsloth `save_pretrained_merged` lỗi Transformers 5.5) → Q4_K_M (~1.93 GB) → smoke `llama-cpp-python` trên T4. Evidence: `submission/screenshots/06-gguf-smoke.png` (prompt Bubble sort VN; response có nội dung thuật toán + bị cắt ở `max_tokens=200`). File `.gguf` giữ trên Colab/Drive, không push GitHub (quá nặng).
 - [ ] Đã làm β-sweep (rigor add-on +6)
 - [ ] Đã push lên HuggingFace Hub (Submission Option B, +5)
-- [ ] Đã release GGUF với multiple quantizations (+3)
+- [ ] Đã release GGUF với multiple quantizations (+3) — chỉ làm Q4_K_M
 - [ ] Đã link W&B run public (+2)
 - [ ] Đã làm cross-judge comparison (+4)
+- [ ] NB6 benchmark (+8) — chưa làm
 - [ ] Đã làm `BONUS-CHALLENGE.md` provocation (ungraded)
 - [ ] Pair work với: _(không)_
 
-**Submission option:** A/C — screenshots + REFLECTION + eval artifacts + adapter **configs/metrics** (bỏ `.safetensors` vì >100MB GitHub limit; weights vẫn nằm trong `lab22_core.zip` local / Drive nếu cần tái tạo).
+**Submission option:** A/C + NB5 screenshot — screenshots + REFLECTION + eval artifacts + adapter **configs/metrics** (bỏ `.safetensors` / `.gguf` vì vượt giới hạn GitHub).
 
 ---
 
